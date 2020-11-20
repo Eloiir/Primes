@@ -20,6 +20,7 @@ void thrTestCase(vector<bool>& result, const unsigned int id, const unsigned lon
 
 vector<bool> manageThrTestCase(unsigned long int howMany){
     vector<bool> result(howMany);
+    if(howMany < THREAD_COUNT) return result;
 
     thread thr1[THREAD_COUNT];
     for(unsigned int i=0; i<THREAD_COUNT; i++){
